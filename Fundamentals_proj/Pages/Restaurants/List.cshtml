@@ -1,0 +1,19 @@
+﻿@page
+@model Fundamentals_proj.Pages.Restaurants.ListModel
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List of restaurants</h1>
+<p>@Model.Message</p>
+<table class="table">
+	@foreach (var restaurant in Model.Restaurants)
+	{
+	<tr>
+		<td>@restaurant.Name</td>
+		<td>@restaurant.Location</td>
+		<td>@restaurant.Cuisine</td>
+	</tr>
+	}
+</table>
+
