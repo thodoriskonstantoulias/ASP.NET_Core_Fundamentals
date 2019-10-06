@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fundamentals_proj", "Fundam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Food.Core", "..\Food.Core\Food.Core.csproj", "{C4F9A85D-A062-4F16-B72B-E124FAF79161}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Food.Data", "..\Food.Data\Food.Data.csproj", "{FED321DD-45B1-4113-98DC-58F406C8AA3B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C4F9A85D-A062-4F16-B72B-E124FAF79161}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4F9A85D-A062-4F16-B72B-E124FAF79161}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4F9A85D-A062-4F16-B72B-E124FAF79161}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FED321DD-45B1-4113-98DC-58F406C8AA3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FED321DD-45B1-4113-98DC-58F406C8AA3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FED321DD-45B1-4113-98DC-58F406C8AA3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FED321DD-45B1-4113-98DC-58F406C8AA3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
