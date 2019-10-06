@@ -6,6 +6,21 @@
 
 <h1>List of restaurants</h1>
 <p>@Model.Message</p>
+
+<form method="get">
+	<div class="form-group">
+		<div class="input-group">
+			<input type ="search" class="form-control" value="" />
+			<span class="input-group-btn">
+				<button class="btn btn-default">
+					<i class="fa fa-search"></i>
+				</button>
+			</span>
+		</div>
+	</div>
+</form>
+
+
 <table class="table">
 	@foreach (var restaurant in Model.Restaurants)
 	{
