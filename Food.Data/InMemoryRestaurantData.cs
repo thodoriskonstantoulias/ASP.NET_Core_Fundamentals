@@ -23,5 +23,18 @@ namespace Food.Data
             return restaurants.OrderBy(x => x.Name);
                    
         }
+
+        public Restaurant GetById(int id)
+        {
+            return restaurants.SingleOrDefault(x => x.Id == id);
+        }
+
+        public IEnumerable<Restaurant> GetRestByName(string name)
+        {
+            return from r in restaurants
+                   where string.IsNullOrEmpty(name) || r.Name.StartsWith(name)
+                   orderby r.Name
+                   select r;
+        }
     }
 }
