@@ -17,6 +17,8 @@ namespace Fundamentals_proj.Pages.Restaurants
 
         public string Message { get; set; }
         public IEnumerable<Restaurant> Restaurants { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string SearchTerm { get; set; }
         public ListModel(IConfiguration config, IRestaurantData  restaurantData)
         {
             this.config = config;
@@ -26,7 +28,8 @@ namespace Fundamentals_proj.Pages.Restaurants
         {
             //Message = "Hello there";
             Message = config["Message"];
-            Restaurants = restaurantData.GetAll();
+            //Restaurants = restaurantData.GetAll();
+            Restaurants = restaurantData.GetRestByName(SearchTerm);
         }
     }
 }
