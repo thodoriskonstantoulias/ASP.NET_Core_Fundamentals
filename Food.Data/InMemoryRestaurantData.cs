@@ -18,6 +18,12 @@ namespace Food.Data
                 new Restaurant{Id = 3 , Name = "Mary's place", Location = "Patra", Cuisine = CuisineType.None}
             };
         }
+
+        public int Commit()
+        {
+            return 0;
+        }
+
         public IEnumerable<Restaurant> GetAll()
         {
             return restaurants.OrderBy(x => x.Name);
@@ -35,6 +41,25 @@ namespace Food.Data
                    where string.IsNullOrEmpty(name) || r.Name.StartsWith(name)
                    orderby r.Name
                    select r;
+        }
+
+        public Restaurant New(Restaurant newRestaurant)
+        {
+            restaurants.Add(newRestaurant);
+            newRestaurant.Id = restaurants.Max(x => x.Id) + 1 ;
+            return newRestaurant;
+        }
+
+        public Restaurant Update(Restaurant updatedRestaurant)
+        {
+            var restaurant = GetById(updatedRestaurant.Id);
+            if (restaurant != null)
+            {
+                restaurant.Name = updatedRestaurant.Name;
+                restaurant.Location = updatedRestaurant.Location;
+                restaurant.Cuisine = updatedRestaurant.Cuisine;
+            }
+            return restaurant;
         }
     }
 }

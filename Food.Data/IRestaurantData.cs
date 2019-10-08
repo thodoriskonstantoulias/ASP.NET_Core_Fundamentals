@@ -10,5 +10,8 @@ namespace Food.Data
         IEnumerable<Restaurant> GetAll();
         IEnumerable<Restaurant> GetRestByName(string name);
         Restaurant GetById(int id);
+        Restaurant Update(Restaurant updatedRestaurant);
+        Restaurant New(Restaurant newRestaurant);
+        int Commit();
     }
 }
