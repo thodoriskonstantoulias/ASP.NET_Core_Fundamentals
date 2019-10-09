@@ -12,6 +12,7 @@ namespace Food.Data
         Restaurant GetById(int id);
         Restaurant Update(Restaurant updatedRestaurant);
         Restaurant New(Restaurant newRestaurant);
+        Restaurant Delete(int id);
         int Commit();
     }
 }
