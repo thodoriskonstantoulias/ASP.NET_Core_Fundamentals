@@ -24,6 +24,16 @@ namespace Food.Data
             return 0;
         }
 
+        public Restaurant Delete(int id)
+        {
+            var restaurant = GetById(id);
+            if (restaurant != null)
+            {
+                restaurants.Remove(restaurant);
+            }
+            return restaurant;
+        }
+
         public IEnumerable<Restaurant> GetAll()
         {
             return restaurants.OrderBy(x => x.Name);
