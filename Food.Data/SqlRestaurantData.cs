@@ -40,6 +40,11 @@ namespace Food.Data
             return context.Restaurants.Find(id);
         }
 
+        public int GetRestaurantCount()
+        {
+            return context.Restaurants.Count();
+        }
+
         public IEnumerable<Restaurant> GetRestByName(string name)
         {
             return from r in context.Restaurants

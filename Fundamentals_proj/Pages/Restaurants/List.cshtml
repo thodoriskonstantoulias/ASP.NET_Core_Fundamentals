@@ -5,7 +5,7 @@
 }
 
 <h1>List of restaurants</h1>
-<p>@Model.Message</p>
+
 
 <form method="get">
 	<div class="form-group">
@@ -21,7 +21,7 @@
 </form>
 
 
-<table class="table">
+@*<table class="table">
 	@foreach (var restaurant in Model.Restaurants)
 	{
 	<tr>
@@ -32,14 +32,26 @@
 			<a class="btn btn-lg" asp-page="./Detail" asp-route-restaurantId="@restaurant.Id">
 				<i class="fa fa-search-plus"></i>
 			</a>
-		</td>
-		<td>
+		
 			<a class="btn btn-lg" asp-page="./Edit" asp-route-restaurantId="@restaurant.Id">
 				<i class="fa fa-edit"></i>
+			</a>
+		
+			<a class="btn btn-lg" asp-page="./Delete" asp-route-restaurantId="@restaurant.Id">
+				<i class="fa fa-trash"></i>
 			</a>
 		</td>
 	</tr>
 	}
-</table>
+</table>*@
+
+@foreach (var restaurant in Model.Restaurants) {
+	<partial name="_Summary" model="restaurant"></partial>
+}
+
 <a asp-page="./Edit" class="btn btn-primary">Add New</a>
+@section footer{
+	<p>@Model.Message</p>
+}
+
 
