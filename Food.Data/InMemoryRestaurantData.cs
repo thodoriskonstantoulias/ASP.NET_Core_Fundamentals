@@ -45,6 +45,11 @@ namespace Food.Data
             return restaurants.SingleOrDefault(x => x.Id == id);
         }
 
+        public int GetRestaurantCount()
+        {
+            return restaurants.Count();
+        }
+
         public IEnumerable<Restaurant> GetRestByName(string name)
         {
             return from r in restaurants
