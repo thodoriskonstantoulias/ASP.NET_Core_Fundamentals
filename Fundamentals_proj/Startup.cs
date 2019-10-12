@@ -55,6 +55,7 @@ namespace Fundamentals_proj
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            app.Use(HelloWorldMiddleware);
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -63,5 +64,22 @@ namespace Fundamentals_proj
 
             app.UseMvc();
         }
+
+        private RequestDelegate HelloWorldMiddleware(RequestDelegate next)
+        {
+            return async ctx =>
+            {
+                if (ctx.Request.Path.StartsWithSegments("/hello"))
+                {
+                    await ctx.Response.WriteAsync("Hello World");
+                }
+                else
+                {
+                    await next(ctx);
+                }
+               
+            };
+        }
+
     }
 }
